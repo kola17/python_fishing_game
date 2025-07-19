@@ -8,8 +8,16 @@
                 "largemouth_bass",
                 "bluegill"
             ]
-    }
-},
+        },
+
+        "Riverbend Lake": {
+
+            "fish_species": [
+                "catfish",
+                "trout"
+            ]
+        },
+    },
 
 
 
@@ -32,6 +40,24 @@
             "habitat": "Freshwater",
             "size": "10 inches",
             "weight": ".25 pounds"
+        },
+
+        "catfish": {
+
+            "name": "Catfish",
+            "diet": "Omnivorous",
+            "habitat": "Freshwater",
+            "size": "24 inches",
+            "weight": "10 pounds"
+        },
+
+        "trout": {
+
+            "name": "Steelhead Trout",
+            "diet": "Carnivorous",
+            "habitat": "Freshwater",
+            "size": "20 inches",
+            "weight": "3 pounds"
         }
     }
 }
