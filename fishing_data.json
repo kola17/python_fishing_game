@@ -1,0 +1,37 @@
+{
+    "locations": {
+
+
+        "Flatwater Eddy": {
+
+            "fish_species": [
+                "largemouth_bass",
+                "bluegill"
+            ]
+    }
+},
+
+
+
+    "fish_species": {
+
+
+        "largemouth_bass": {
+
+            "name": "Largemouth Bass",
+            "diet": "Carnivorous",
+            "habitat": "Freshwater",
+            "size": "18 inches",
+            "weight": "2 pounds"
+        },
+
+        "bluegill": {
+
+            "name": "Bluegill",
+            "diet": "Carnivorous",
+            "habitat": "Freshwater",
+            "size": "10 inches",
+            "weight": ".25 pounds"
+        }
+    }
+}
