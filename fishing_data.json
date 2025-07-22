@@ -7,9 +7,15 @@
             "fish_species": [
                 "largemouth_bass",
                 "bluegill"
-            ]
-    }
-},
+            ],
+
+            "catch_probabilities": {
+                "common" : ".60",
+                "uncommon" : ".30",
+                "rare" : ".10"
+            }
+        }
+    },
 
 
 
