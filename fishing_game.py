@@ -14,15 +14,20 @@ except Exception as e:
     
 # Creates Fish class and assigns attributes as parameters
 class Fish:
-    def __init__(self, name, diet, habitat, size, weight):
+    def __init__(self, name, diet, habitat, size, weight, rarity):
         self.name = name
         self.diet = diet
         self.habitat = habitat
         self.size = size
         self.weight = weight
+        self.rarity = rarity
+
+name = fishing_data["fish_species"]
+diet = fishing_data["fish_species"]
+habitat = fishing_data["fish_species"]
+size = fishing_data["fish_species"]
+weight = fishing_data["fish_species"]
+rarity = fishing_data["fish_species"]
 
 
-        
-        
-        
-
+print(fishing_data["fish_species"].keys())

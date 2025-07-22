@@ -7,7 +7,7 @@
             "fish_species": [
                 "largemouth_bass",
                 "bluegill"
-            ]
+            ],
           
             "catch_probabilities": {
                 "common" : ".60",
@@ -28,7 +28,8 @@
             "diet": "Carnivorous",
             "habitat": "Freshwater",
             "size": "18 inches",
-            "weight": "2 pounds"
+            "weight": "2 pounds",
+            "rarity": "common"
         },
 
         "bluegill": {
@@ -37,7 +38,8 @@
             "diet": "Carnivorous",
             "habitat": "Freshwater",
             "size": "10 inches",
-            "weight": ".25 pounds"
+            "weight": ".25 pounds",
+            "rarity": "common"
         },
 
         "catfish": {
@@ -46,7 +48,8 @@
             "diet": "Omnivorous",
             "habitat": "Freshwater",
             "size": "24 inches",
-            "weight": "10 pounds"
+            "weight": "10 pounds",
+            "rarity": "common"
         },
 
         "trout": {
@@ -55,7 +58,18 @@
             "diet": "Carnivorous",
             "habitat": "Freshwater",
             "size": "20 inches",
-            "weight": "3 pounds"
+            "weight": "3 pounds",
+            "rarity": "uncommon"
+        },
+
+        "pike":{
+
+            "name": "Northern Pike",
+            "diet": "Carnivorous",
+            "habitat": "Freshwater",
+            "size":"20 inches",
+            "weight": "3 pounds",
+            "rarity": "rare"
         }
     }
 }
