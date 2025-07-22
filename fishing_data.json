@@ -8,14 +8,12 @@
                 "largemouth_bass",
                 "bluegill"
             ]
-        },
-
-        "Riverbend Lake": {
-
-            "fish_species": [
-                "catfish",
-                "trout"
-            ]
+          
+            "catch_probabilities": {
+                "common" : ".60",
+                "uncommon" : ".30",
+                "rare" : ".10"
+            }
         }
     },
 

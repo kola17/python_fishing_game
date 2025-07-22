@@ -22,10 +22,10 @@ frame.grid(column=3, row=3, sticky=(N,W,E,S))
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
-# Creates a dropdown menu for selecting a location
 
+# Creates Tkinter Buttons
+fish_button = ttk.Button(frame, text='Cast!').grid(row=2, column=2)
+stop_button = ttk.Button(frame, text='Stop!').grid(row=0, column=0)
 
+# Runs Tkinter Window
 root.mainloop()
-
-print(location.items())
-print(fish_species.items())
