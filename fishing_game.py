@@ -11,7 +11,10 @@ except json.JSONDecodeError:
     print("Error: Invalid JSON format in 'fishing_game.json'.")
 except Exception as e:
     print(f"An unexpected error occured: {e}")
-    
+
+locations = fishing_data["locations"]
+fish_species = fishing_data["fish_species"]
+
 # Defines Fish class
 class Fish:
     def __init__(self, data):
