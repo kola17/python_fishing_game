@@ -44,6 +44,7 @@ fishing_game/
 - [x] Design JSON structure (locations with probabilities, fish species with stats)
 - [x] Write Fish class that creates objects from JSON data
 - [x] Test JSON loading and Fish object creation
+- [ ] Fix JSON fish attribute ranges with objects
 - [ ] Verify random attribute generation (weight/length within ranges)
 
 **Success Criteria:** Can load JSON, create Fish objects, print their attributes to console
