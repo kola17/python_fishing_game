@@ -6,11 +6,11 @@ try:
         fishing_data = json.load(file)
 # Error checks
 except FileNotFoundError:
-    print("Error: The file 'fishing_game.json' was not found.")
+    print("Error: The file 'fishing_data.json' was not found.")
 except json.JSONDecodeError:
-    print("Error: Invalid JSON format in 'fishing_game.json'.")
+    print("Error: Invalid JSON format in 'fishing_data.json'.")
 except Exception as e:
-    print(f"An unexpected error occured: {e}")
+    print(f"An unexpected error occurred: {e}")
 
 locations = fishing_data["locations"]
 fish_species = fishing_data["fish_species"]
@@ -30,80 +30,46 @@ class Fish:
 class Location:
     def __init__(self, data):
         self.data = data
-        self.name = data.get(fishing_data["locations"].values())
+        self.name = data.get("name")
+        self.fish_species = data.get("fish_species")
+        self.catch_prob = data.get("catch_probabilities")
 
-
-       
+      
 all_fish = []        
 common_fish = []
 uncommon_fish = []
 rare_fish = []
 
-# Creates fish objects from .json file and assigns them to all_fish
-def put_fish_in_list():
-    for fish_data in fishing_data["fish_species"].values():
-        fish = Fish(fish_data)
-        all_fish.append(fish)
-# Calls function
-put_fish_in_list()
+all_locations = []
 
-# Creates fish objects from .json file and assigns them to lists based on rarity.
-def assign_fish_rarity_lists():
-    for fish_data in fishing_data["fish_species"].values():
-        fish = Fish(fish_data)
-        if fish.rarity == "common" and fish not in common_fish:
-            common_fish.append(fish)
-        elif fish.rarity == "uncommon" and fish not in uncommon_fish:
-            uncommon_fish.append(fish)
-        elif fish.rarity == "rare" and fish not in rare_fish:
-            rare_fish.append(fish)
-        else:
-            break    
-# Calls function
-assign_fish_rarity_lists()
+# Creates fish objects and adds them to the fish list
+for fish_key,fish_data in fish_species.items():
+    fish_obj = Fish(fish_data)
+    fish_obj.id = fish_key
+    all_fish.append(fish_obj)
 
-# def get_fish(current_location):
-    #for location_data in fishing_data["locations"].values():
-        #location = Location(location_data)
-    
-    #for fish_data in fishing_data["fish_species"].values():
-        #fish = Fish(fish_data)
-        
-        #fish_species = []
-        
-        #for species in location.fish_species:
-            #fish_species.append(species)
-            
-            #for i,name in enumerate(fish_species):
-               # if name == fish.name:
-                    #fish_species[i] = fish
-                    
+# Creates location objects and adds them to the locations list
+for location_key,location_data in locations.items():
+    location_obj = Location(location_data)
+    location_obj.id = location_key
+    all_locations.append(location_obj)
+
+# Create a fish lookup dictionary (do this once during initialization)
+fish_lookup = {fish.id: fish for fish in all_fish}
+
+# Gets list of fish for current location "NEEDS STRING ATM"
 def get_fish(current_location):
-    # Create fish lookup dictionary once
-    fish_lookup = {}
-    for fish_data in fishing_data["fish_species"].values():
-        fish = Fish(fish_data)
-        fish_lookup[fish.name] = fish
-    
-    # Find matching location and convert names to objects
-    for location_data in fishing_data["locations"].values():
-        location = Location(location_data)
+    current_location_fish = []
+    current_location_fish.clear()
+    for location in all_locations:
         if location.name == current_location:
-            return [fish_lookup[name] for name in location.fish_species if name in fish_lookup]
-    return []
+            for fish_species in location.fish_species:
+                if fish_species in fish_lookup:
+                    current_location_fish.append(fish_lookup[fish_species])
+            break
+    return current_location_fish
+                
+f = get_fish("Salty Stream")
+for f in f:
+    print(f.name)
 
-fish_list = get_fish(fishing_data["locations"]["Flatwater Eddy"])
-
-print(fish_list)             
-            
-            
-    
-    
-    
-    
-    
-    
-
-#fish=Fish(fishing_data["fish_species"]["pike"])
-
-#print(fish.rarity)

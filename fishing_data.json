@@ -4,6 +4,9 @@
 
         "Flatwater Eddy": {
 
+
+            "name": "Flatwater Eddy",
+
             "fish_species": [
                 "largemouth_bass",
                 "bluegill"
@@ -13,6 +16,26 @@
                 "common" : ".60",
                 "uncommon" : ".30",
                 "rare" : ".10"
+            }
+        },
+
+
+
+        "Salty Stream": {
+
+
+            "name": "Salty Stream",
+
+            "fish_species": [
+                "catfish",
+                "trout",
+                "pike"
+            ],
+
+            "catch_probabilites": {
+                "common": ".60",
+                "uncommon": ".30",
+                "rare": ".10"
             }
         }
     },
@@ -28,7 +51,7 @@
             "diet": "Carnivorous",
             "habitat": "Freshwater",
             "size": "18 inches",
-            "weight": "2 pounds",
+            "weight": {"min": 0.5, "max": 5, "unit": "pounds"},
             "rarity": "common"
         },
 
